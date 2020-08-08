@@ -23,6 +23,8 @@
               type="text"
               placeholder="Ingresa tus nombres completos"
               id="nombres"
+              required
+              pattern="[A-Z a-z]+"
             />
             <!--  -->
             <br />
@@ -31,26 +33,31 @@
               type="text"
               placeholder="Ingrese sus apellidos"
               id="apellidos"
+              required
+              pattern="[A-Z a-z]{1,15}"
             />
             <!--  -->
             <br />
             <label for="email">Correo:</label>
-            <input type="email" placeholder="Ingresa tu email" id="email" />
+            <input type="email" placeholder="Ingresa tu email" id="email" 
+            pattern="[A-Z a-z 0-9]{1,}@[A-Z a-z 0-9]{1,}.[A-Z a-z]{2,}"
+            required/>
             <!--  -->
             <br />
             <label>Contraseña</label>
-            <input type="password" placeholder="Pon una contraseña segura" />
+            <input type="password" placeholder="Pon una contraseña segura" minlength="6" />
             <!--  -->
             <br />
             <label>Edad</label>
-            <input type="number" placeholder="Ingrese su edad" />
+            <input type="number" placeholder="Ingrese su edad" min="0" max="150" />
           </fieldset>
           <!-- Fin de datos obligatorios -->
 
           <fieldset>
             <legend>Datos Adicionales</legend>
             <label>Telf. Fijo</label>
-            <input type="tel" placeholder="Ej- 054-202020" />
+            <input type="tel" placeholder="Ej- 054-202020" 
+            pattern="[0-9]{2,3}-[0-9]{6,}"/>
             <!--  -->
             <br />
             <label>Celular</label>

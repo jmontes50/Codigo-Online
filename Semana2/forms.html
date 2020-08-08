@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Forms</h1>
+    </header>
+    <main>
+      <section>
+        <!-- Aquí adentro vamos a crear el formulario de registro de un alumno -->
+        <form>
+          <p>
+            Por favor llenar toda la información solicitada.
+          </p>
+          <fieldset>
+            <legend>Datos Obligatorios</legend>
+            <label for="nombres">Nombres Completos:</label>
+            <input
+              type="text"
+              placeholder="Ingresa tus nombres completos"
+              id="nombres"
+            />
+            <!--  -->
+            <br />
+            <label for="apellidos">Apellidos Completos:</label>
+            <input
+              type="text"
+              placeholder="Ingrese sus apellidos"
+              id="apellidos"
+            />
+            <!--  -->
+            <br />
+            <label for="email">Correo:</label>
+            <input type="email" placeholder="Ingresa tu email" id="email" />
+            <!--  -->
+            <br />
+            <label>Contraseña</label>
+            <input type="password" placeholder="Pon una contraseña segura" />
+            <!--  -->
+            <br />
+            <label>Edad</label>
+            <input type="number" placeholder="Ingrese su edad" />
+          </fieldset>
+          <!-- Fin de datos obligatorios -->
+
+          <fieldset>
+            <legend>Datos Adicionales</legend>
+            <label>Telf. Fijo</label>
+            <input type="tel" placeholder="Ej- 054-202020" />
+            <!--  -->
+            <br />
+            <label>Celular</label>
+            <input type="number" placeholder="61243675" disabled />
+            <!--  -->
+            <br />
+            <label>Género</label>
+            <br />
+            <input type="radio" name="genero" value="M" />Masculino<br />
+            <input type="radio" name="genero" value="F" />Femenino<br />
+            <input type="radio" name="genero" value="NC" />Prefiero no
+            compartirlo<br />
+            <!--  -->
+            <label for="departamento">Departamento</label>
+            <select id="departamento">
+              <option selected disabled>Elija una ciudad...</option>
+              <option value="AM">Amazonas</option>
+              <option value="AN">Ancash</option>
+              <option value="AP">Apurimac</option>
+              <option value="AR">Arequipa</option>
+              <option value="PI">Piura</option>
+              <option value="IC">Ica</option>
+              <option value="CU">Cusco</option>
+              <option value="LI">Lima</option>
+              <option value="MO">Moquegua</option>
+              <option value="JU">Julicapulco</option>
+              <option value="TA">Tacna</option>
+              <option value="TR">Trujillo</option>
+            </select>
+          </fieldset>
+          <!--  -->
+          <fieldset>
+            <legend>Datos para evaluación psicológica</legend>
+            <label>Hobbies</label>
+            <br/>
+            <label for="motear">Motear</label>
+            <input type="checkbox" value="autos" id="motear">
+            <br/>
+            <label for="futbol">Futbol</label>
+            <input type="checkbox" value="futbol" id="futbol">
+            <br/>
+            <label for="cocinar">Cocinar</label>
+            <input type="checkbox" value="cocinar" id="cocinar">
+            <br/>
+            <label for="comer">Comer</label>
+            <input type="checkbox" value="comer" id="comer">
+            <br/>
+            <label for="netflix">Netflix</label>
+            <input type="checkbox" value="netflix" id="netflix">
+            <br/>
+            <label>Color Favorito</label>
+            <input type="color">
+            <br/>
+            <label>Descripción:</label>
+            <textarea placeholder="Describete en 140 carácteres" cols="50" rows="15" ></textarea>
+          </fieldset>
+          <input type="submit" value="enviar"/>
+          <button type="reset">Limpiar Formulario</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

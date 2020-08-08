@@ -1,0 +1,16 @@
+h1{
+    color:red;
+    font-family:Arial, sans-serif;
+}
+
+section{
+    background-color: paleturquoise;
+}
+/* esto es una clase, funciona para varios elementos */
+.realce{
+    color:blue;
+}
+/*Esto es importante*/
+#marcador{
+    background-color: yellowgreen;
+}

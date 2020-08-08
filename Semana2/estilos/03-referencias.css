@@ -1,0 +1,101 @@
+/* referencias */
+/* todos los h1 y todos los article */
+article, h1{
+  background-color:skyblue;
+}
+
+/* todos los hijos a CUALQUIER nivel dentro de section */
+section article{
+  color:yellow;
+}
+
+/* con > estoy haciendo que los primeros hijos LI o hijos directos LI de OL cojan ese estilo */
+ol>li{
+  font-family: Arial, Helvetica, sans-serif;
+  color:orange;
+}
+
+/* el p que este inmediatamente despueés de un div */
+div+p{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Puede ser mas especifico con los elementos que desee seleccionar */
+ol>ul>li{
+  color:red;
+}
+
+.seccion1>h2{
+  border:2px double peru;
+}
+
+#caja>span{
+  color:purple;
+}
+
+.seccion{
+  border:2px solid green !important;
+}
+
+.heading{
+  font-family:Arial, Helvetica, sans-serif
+}
+
+h2.adicional{
+  background-color:yellow;
+}
+
+.adicional2{
+  color:red;
+}
+
+p[name="instrucciones"]{
+  font-style:italic;
+}
+
+input[type="email"]{
+  color:blue;
+}
+
+input[placeholder]{
+  background-color: turquoise;
+}
+
+input:placeholder-shown{
+  color:brown;
+}
+
+/* PSEUDOCLASES */
+
+/* posicion 3 */
+p:nth-child(3){
+  font-style: italic;
+  font-weight: bold;
+  color: purple;
+}
+
+p:first-child{
+  color:salmon;
+}
+
+tr:nth-child(odd){
+  background-color:gray;
+}
+tr:nth-child(even){
+  background-color: springgreen;
+}
+
+thead tr:nth-child(1){
+  background-color: teal;
+}
+
+p:nth-of-type(1){
+  font-size:12px;
+}
+
+/* Pseudoelemento */
+
+li::after{
+  color:red;
+  font-variant: small-caps;
+}

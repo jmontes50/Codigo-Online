@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        .menu{
+            width:100%;
+            height:400px;
+            background-color: peru;
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .link{
+            background-color:green;
+            /* width:150px; */
+            height:150px;
+            padding:20px;
+            text-align: center;
+            border:1px solid white;
+            flex-basis:175px;
+        }
+
+        .link3{
+            flex-grow:4;
+            background-color: indigo;
+            flex-shrink:2;
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <div class="link">link1</div>
+        <div class="link">link2</div>
+        <div class="link link3">link3</div>
+        <div class="link">link4</div>
+        <div class="link">link5</div>
+        <div class="link">link6</div>
+    </nav>
+</body>
+</html>

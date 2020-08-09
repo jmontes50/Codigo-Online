@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .papa{
+            width:500px;
+            height:2000px;
+            border:1px solid blue;
+        }
+        .hijo{
+            width:100px;
+            height:75px;
+            margin:5px;
+            border:1px solid red;
+        }
+        .caja2{
+            position:relative;
+            top:20px;
+            left:10px;
+            background-color: yellow;
+            z-index:1;
+        }
+        .caja3{
+            z-index:10;
+            position:relative;
+        }
+        .caja4{
+            position:fixed;
+            bottom:20px;
+            right:10px;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <section class="papa">
+        <div class="hijo caja1">cajita</div>
+        <div class="hijo caja2">cajita</div>
+        <div class="hijo caja3">cajita</div>
+        <div class="hijo caja4">cajita</div>
+    </section>
+</body>
+</html>

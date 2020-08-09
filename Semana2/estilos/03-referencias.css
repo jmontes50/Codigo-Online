@@ -99,3 +99,12 @@ li::after{
   color:red;
   font-variant: small-caps;
 }
+
+/* colores */
+
+h1{
+  /* color:blue; */
+  /* color:#4DFF66; */
+  color:rgba(255,128,64,0.8);
+}
+

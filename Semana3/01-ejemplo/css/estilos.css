@@ -129,6 +129,30 @@ header>div>button{
   padding:30px;
 }
 
+/* menu */
+
+.menu a{
+  color:gray;
+  transition: 0.5s;
+}
+
+.show-menu-btn, .hide-menu-btn{
+  cursor: pointer;
+  font-size:30px;
+  transition: 0.5s;
+  display:none;
+}
+
+.show-menu-btn{
+  float:right;
+}
+
+#chk{
+  position: absolute;
+  visibility: hidden;
+  z-index:-100;
+}
+
 @media screen and (max-width:800px){
   header{
     flex-direction: column; /*orientacion cambiada*/
@@ -147,5 +171,40 @@ header>div>button{
   .tarjeta{
     width:100%;
     margin:15px auto;
+  }
+
+  /* menu */
+
+  .show-menu-btn, .hide-menu-btn{
+    display:block;
+  }
+
+  .menu{
+    position:fixed;
+    width:100%;
+    height:100vh;/*viewport height*/
+    background-color:#1ABE84;
+    right:-100%;
+    top:0;
+    text-align:center;
+    padding:100px 0;
+    line-height: normal;
+    transition:0.7s;
+  }
+
+  .menu a{
+    display:block;
+    padding:20px;
+    color:white;
+  }
+
+  .hide-menu-btn{
+    position:absolute;
+    top:40px;
+    right:40px;
+  }
+
+  #chk:checked ~ .menu{
+    right:0;
   }
 }

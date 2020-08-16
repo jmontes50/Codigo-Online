@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Esta es la de texto para párrafos -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <img src="assets/img/logo.png" alt="logo" />
+        <input type="checkbox" id="chk" />
+        <label for="chk" class="show-menu-btn">
+          <i class="fas fa-ellipsis-h"></i>
+        </label>
+
+        <ul class="menu">
+          <a href="#">Inicio</a>
+          <a href="#">Acerca</a>
+          <a href="#">Servicios</a>
+          <a href="#">Contacto</a>
+          <label for="chk" class="hide-menu-btn">
+            <i class="fas fa-times"></i>
+          </label>
+        </ul>
+      </nav>
+
+      <header>
+        <div>
+          <h1>Explora y Viaja</h1>
+          <input type="text" id="search" placeholder="Busca un lugar" />
+          <button id="buscar">Explora</button>
+        </div>
+        <img src="assets/img/img1.png" />
+      </header>
+
+      <section class="destinos">
+        <div class="title">
+          <h2>Featured destinations</h2>
+          <a href="#" class="vermas">Ver más ></a>
+        </div>
+        <div class="tarjetas">
+          <div class="tarjeta">
+            <div class="cover">
+              <i class="fas fa-heart"></i> <span>Like</span>
+            </div>
+          </div>
+          <div class="tarjeta">
+            <div class="cover">
+              <i class="fas fa-heart"></i> <span>Like</span>
+            </div>
+          </div>
+          <div class="tarjeta">
+            <div class="cover">
+              <i class="fas fa-heart"></i> <span>Like</span>
+            </div>
+          </div>
+          <div class="tarjeta">
+            <div class="cover">
+              <i class="fas fa-heart"></i>
+              <span>Like</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

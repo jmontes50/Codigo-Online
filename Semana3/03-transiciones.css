@@ -1,0 +1,19 @@
+.cuadrado{
+  width:200px;
+  height:200px;
+  background-color:aquamarine;
+  border:1px solid blue;
+  border-radius:10px;
+
+  /* transition-duration: 1s;
+  transition-delay: 2000ms;
+  transition-timing-function: ease-in-out;
+  transition-property: width, height; */
+  transition: width 1s 250ms ease, height 1s 500ms ease;
+}
+
+/* hover aplica cuando el mouse esta encima */
+.cuadrado:hover{
+  width:300px;
+  height:300px;
+}

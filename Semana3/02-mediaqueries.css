@@ -1,0 +1,43 @@
+nav{
+  background: coral;
+}
+
+nav li{
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color:white;
+}
+
+ul{
+  display:flex;
+  justify-content: space-around;
+}
+
+@media screen and (max-width:420px){
+  /* equivale a una hoja nueva 
+  para poner mis estilos */
+  /* de forma implicita los estilos previos que se hayan configurado se aplicarán a menos que otro estilo se sobreponga */
+
+   nav{
+     background-color:blue;
+   }
+
+   ul{
+     flex-direction: column;
+   }
+
+   nav li{
+     font-size:20px;
+     margin:15px auto;
+     padding: 10px 5px 2px 20px;
+   }
+}
+
+@media screen and (max-width:320px){
+  nav{
+    background-color:yellow;
+  }
+}

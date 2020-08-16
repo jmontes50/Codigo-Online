@@ -1,0 +1,151 @@
+/* reset */
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+/* algunos estilos más */
+
+a{
+  color:black;
+  text-decoration: none;
+}
+
+/* agregando una fuente a partir de un archivo */
+@font-face{
+  font-family:'Inter';
+  font-weight:normal;
+  font-style:normal;
+  src: url('../assets/fonts/Inter-Regular.woff');
+}
+
+@font-face{
+  font-family:'Open';
+  font-weight:normal;
+  font-style:normal;
+  src:url('../assets/fonts/OpenSansCondensed-Bold.ttf');
+}
+
+.container{
+  font-family:'Inter';
+  max-width: 1000px;
+  padding:30px 0 0 0;
+  margin:0 auto;
+}
+
+h1,h2{
+  font-family:'Playfair Display';
+}
+
+nav{
+  display:flex;
+  justify-content: space-between;
+  padding:10px 20px;
+}
+
+header{
+  display:flex;
+}
+
+header>div{
+  width:50%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+
+header>img{
+  width:50%;
+}
+
+header>div>input, header>div>button{
+  height:40px;
+  padding: 5px;
+  border-radius:10px;
+  box-shadow: 3px 3px 3px gray;
+  border: 1px solid orange;
+}
+
+header>div>button{
+  background-color:#FB8F1D;
+  color:white;
+  font-weight: bold;
+}
+
+.title{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.vermas{
+  color:#FB8F1D;
+  font-weight:bold;
+}
+
+.tarjetas{
+  display:flex;
+  justify-content: space-between;
+}
+
+.tarjeta{
+  height:300px;
+  width:23%;
+  background-image: url('https://picsum.photos/400/400');
+  background-size: cover;
+  background-position:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius: 10px;
+}
+
+.cover{
+  background-color: rgba(255,255,255,0.6);
+  width:100%;
+  height:100%;
+  transition-property: width, height;
+  transition-delay:100ms;
+  transition-duration:1s;
+  display:none;
+}
+
+.tarjeta:hover .cover{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  text-shadow:2px 2px 2px black;
+}
+
+.cover:hover{
+  width:80%;
+  height:90%;
+}
+
+.destinos{
+  padding:30px;
+}
+
+@media screen and (max-width:800px){
+  header{
+    flex-direction: column; /*orientacion cambiada*/
+    align-items: center; /*vertical, al ser column la orientación lo hará de forma horizontal*/
+  }
+
+  header>div{
+    width:100%;
+    height:300px;
+  }
+
+  .tarjetas{
+    flex-direction: column;
+  }
+
+  .tarjeta{
+    width:100%;
+    margin:15px auto;
+  }
+}

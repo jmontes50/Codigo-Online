@@ -1,0 +1,42 @@
+#nave{
+  width:150px;
+}
+
+#nave:hover{
+  animation-name:animacion;
+  /* duracion de la animación en segundos o milisegundos */
+  animation-duration: 5s;
+  /* como se va a realizar esta animación */
+  animation-timing-function: ease;
+  /* cuantas veces quiero que se ejecute esa animación, predeterminada = 1 */
+  animation-iteration-count: infinite;
+  /* el orden los frames al ejecutarse la animacion, normal, reverse, alternate */
+  animation-direction: reverse;
+  /* como afectan a la animación, los estilos del elemento, predeterminada = none */
+  animation-fill-mode: both;
+  /* retardo de la animación al ejecutarse */
+  animation-delay:2000ms;
+  /* animation: animacion 3s ease-in 250ms infinite; */
+}
+
+@keyframes animacion {
+  0%{
+    transform: translate(0px, 0px);
+  }
+
+  25%{
+    transform: translate(50px,0px);
+  }
+
+  50%{
+    transform: translate(50px, 50px);
+  }
+
+  75%{
+    transform: translate(0px,50px);
+  }
+
+  100%{
+    transform: translate(0px,0px);
+  }
+}

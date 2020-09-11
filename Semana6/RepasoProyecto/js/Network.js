@@ -11,9 +11,23 @@ class Network{
       }).then(misFotos => {
         // console.log("network",misFotos)
         resolve(misFotos)
-      }).catch(error => {
-        reject(error)
-      })
+      }).catch(error => reject(error))
+    })
+  }
+
+  crearFoto(objFoto){
+    return new Promise((resolve, reject) => {
+      let configuracion = {
+        method:'POST',
+        body:JSON.stringify(objFoto),
+        headers: {'Content-Type':'application/json'}
+      }
+      fetch(`${URL}/Fotos`,configuracion)
+      .then(respuesta => {
+        return respuesta.json();
+      }).then(fotoCreada => {
+        resolve(fotoCreada);
+      }).catch(error => reject(error))
     })
   }
 }

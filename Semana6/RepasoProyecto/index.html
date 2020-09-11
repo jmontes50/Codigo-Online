@@ -16,6 +16,7 @@
     <!-- navbar bootstrap -->
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">AppFotos</a>
+      <button class="btn btn-outline-primary" id="btnAgregarModal">Agregar Foto</button>
     </nav>
     <main class="container mt-2">
       <div class="row" id="contenido">
@@ -28,7 +29,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Foto</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -38,6 +39,40 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal 2-->
+    <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Añadir Foto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="formfoto">
+              <div class="form-group">
+                <label>Nombre:</label>
+                <input type="text" class="form-control" name="foto_nombre"/>
+              </div>
+              <div class="form-group">
+                <label>Descripción:</label>
+                <input type="text" class="form-control" name="foto_descripcion"/>
+              </div>
+              <div class="form-group">
+                <label>Url:</label>
+                <input type="text" class="form-control" name="foto_url"/>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="btnAgregarFoto" class="btn btn-primary">Agregar Fotito</button>
           </div>
         </div>
       </div>

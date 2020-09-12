@@ -1,0 +1,37 @@
+.texto {
+  color: #5522ff;
+  font-family: Helvetica, sans-serif;
+}
+
+.btn {
+  color: orangered;
+}
+.btn:hover {
+  color: red;
+  font-weight: bold;
+}
+
+.perfil__imagen {
+  border-radius: 20px;
+}
+.perfil__imagen:hover {
+  box-shadow: 2px 2px 2px black;
+}
+
+.cuadrado {
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+}
+
+.redondo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px solid blue;
+}
+
+.titulo {
+  height: 125px;
+  border: 1px solid orange;
+}

@@ -31,5 +31,4 @@ btnAgregarFoto.addEventListener("click",()=>{
       formulario.reset();
       getFotos()
     })
-
 })

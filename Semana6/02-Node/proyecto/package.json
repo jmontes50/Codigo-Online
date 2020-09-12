@@ -1,0 +1,21 @@
+{
+  "name": "proyectoejemplo",
+  "version": "1.0.0",
+  "description": "Es un proyecto de ejemplo con Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js"
+  },
+  "keywords": [
+    "Node",
+    "Educacion",
+    "Chifa"
+  ],
+  "author": "Osmar Montesinos",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "nodemon": "^2.0.4"
+  }
+}

@@ -1,0 +1,55 @@
+// variables globales
+@import "./components/globals";
+
+.texto{
+  color:$colorprimario;
+  font-family: $fuentegeneral;
+}
+
+.btn{
+  color:orangered;
+  &:hover{
+    color:red;
+    font-weight:bold;
+  }
+}
+
+.perfil{//bloque - block
+  &__imagen{ //elemento - elemento
+    border-radius:20px;
+    &:hover{ //modificador
+      box-shadow: 2px 2px 2px black;
+    }
+  }
+}
+
+//mixins
+@mixin cuadrado($tamanio){
+  width:$tamanio;
+  height:$tamanio;
+}
+
+@mixin circulo($tamanio){
+  @include cuadrado($tamanio);
+  border-radius:50%;
+  border:1px solid blue;
+}
+
+.cuadrado{
+  @include cuadrado(100px);
+  border:1px solid red;
+}
+
+.redondo{
+  @include circulo(200px)
+}
+
+@function calcular($numero){
+  @return $numero/2;
+}
+
+.titulo{
+  height: calcular(250px);
+  border:1px solid orange;
+}
+

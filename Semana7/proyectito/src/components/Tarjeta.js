@@ -14,7 +14,7 @@ export default function Tarjeta({producto}) {
           <p className="card-text">
             Precio: {producto.producto_precio}
           </p>
-          <Link className="btn btn-primary btn-sm" to="/detalle">Detalle</Link>
+          <Link className="btn btn-primary btn-sm" to={`/detalle/${producto.producto_id}`}>Detalle</Link>
         </div>
       </div>
     </div>

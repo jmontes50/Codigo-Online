@@ -8,7 +8,7 @@ export default function Tarjetas() {
 
   const getProducts = async () => {
     let data = await obtenerProductos()
-    console.log(data)
+    // console.log(data)
     setProductos(data)
   }
 

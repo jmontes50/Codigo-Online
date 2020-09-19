@@ -1,15 +1,19 @@
-import React from 'react'
-import Navigation from './components/Navigation';
-import Tarjeta from './components/Tarjeta';
-import Tarjetas from './components/Tarjetas';
+import React from "react";
+import Routes from "./routes";
+import { Switch, BrowserRouter as Router } from "react-router-dom";
+import Navigation from "./components/Navigation";
 
 export default function App() {
   return (
-    <div>
-      <Navigation/>
-      <div class="container">
-        <Tarjetas/>
+    <Router>
+      <div>
+        <Navigation />
+        <div className="container">
+          <Switch>
+            <Routes />
+          </Switch>
+        </div>
       </div>
-    </div>
-  )
+    </Router>
+  );
 }

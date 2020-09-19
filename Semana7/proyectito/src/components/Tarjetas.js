@@ -17,8 +17,12 @@ export default function Tarjetas() {
   },[])
 
   return (
-    <div>
-      Tarjetas
+    <div className="row">
+      {
+        productos.map((prod, i) => (
+          <Tarjeta producto={prod} key={i}/>
+        ))
+      }
     </div>
   )
 }

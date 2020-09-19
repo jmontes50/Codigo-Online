@@ -1,18 +1,20 @@
 import React from 'react'
-import './css/Tarjeta.css';
+import {Link} from 'react-router-dom';
 
-export default function Tarjeta() {
+export default function Tarjeta({producto}) {
+  // console.log("tarjeta",props)
   return (
-    <div>
-      <div class="tarjeta">
-        <img src="https://picsum.photos/200/300" />
-        <div class="tarjeta-cuerpo">
-          <h3 class="tarjeta-titulo">
-            Producto1
+    <div className="col-12 col-lg-6 col-xl-3">
+      <div className="card">
+        <img src={producto.producto_imagen} className="card-img-top"/>
+        <div className="card-body">
+          <h3 className="card-title">
+            {producto.producto_nombre}
           </h3>
-          <p>
-            Precio: $ 50
+          <p className="card-text">
+            Precio: {producto.producto_precio}
           </p>
+          <Link className="btn btn-primary btn-sm" to="/detalle">Detalle</Link>
         </div>
       </div>
     </div>

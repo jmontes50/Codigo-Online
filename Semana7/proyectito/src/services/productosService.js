@@ -21,4 +21,16 @@ const obtenerProductoPorId = async (prod_id) => {
   }
 }
 
-export {obtenerProductos, obtenerProductoPorId}
+const crearProducto = async (objProducto) => {
+  try{
+    let headers = {
+      'Content-Type':'application/json'
+    }
+    let {data} = await axios.post(URL,objProducto,{headers})
+    return {data};
+  }catch(error){
+    return error;
+  }
+}
+
+export {obtenerProductos, obtenerProductoPorId, crearProducto}

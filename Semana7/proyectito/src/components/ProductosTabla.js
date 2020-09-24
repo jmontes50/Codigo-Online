@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 
-export default function ProductosTabla({ productos }) {
+export default function ProductosTabla({ productos, deleteProduct }) {
   return (
     <Fragment>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th>Nº</th>
@@ -26,7 +26,7 @@ export default function ProductosTabla({ productos }) {
               },
               i
             ) => (
-              <tr>
+              <tr key={i}>
                 <td>{i + 1}</td>
                 <td>{producto_nombre}</td>
                 <td>{producto_descripcion.slice(0, 40)} ...</td>
@@ -36,7 +36,7 @@ export default function ProductosTabla({ productos }) {
                   <button className="btn btn-outline-info btn-sm mr-2">
                     <i className="fas fa-pen-alt"></i>
                   </button>
-                  <button className="btn btn-outline-danger btn-sm">
+                  <button className="btn btn-outline-danger btn-sm" onClick={()=>{deleteProduct(producto_id)}}>
                   <i className="fas fa-trash"></i>
                   </button>
                 </td>

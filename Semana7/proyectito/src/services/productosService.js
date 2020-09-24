@@ -27,10 +27,19 @@ const crearProducto = async (objProducto) => {
       'Content-Type':'application/json'
     }
     let {data} = await axios.post(URL,objProducto,{headers})
-    return {data};
+    return data;
   }catch(error){
     return error;
   }
 }
 
-export {obtenerProductos, obtenerProductoPorId, crearProducto}
+const borrarProducto = async (prod_id) => {
+  try {
+    let {data} = await axios.delete(`${URL}/${prod_id}`);
+    return data;
+  } catch (error) {
+    return error;
+  }
+}
+
+export {obtenerProductos, obtenerProductoPorId, crearProducto, borrarProducto}

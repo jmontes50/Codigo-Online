@@ -1,10 +1,12 @@
 import React,{useState, useContext} from 'react'
 import {ingresar} from "../services/authService";
 import {AuthContext} from "../context/authContext";
+import {useHistory} from 'react-router-dom';
 
 export default function LoginView() {
   const [correo, setCorreo] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
 
   const {user, setAuthUser} = useContext(AuthContext);
 
@@ -13,6 +15,7 @@ export default function LoginView() {
     ingresar(correo, password)
     .then(rpta => {
       setAuthUser(rpta.uid);
+      return history.push('/admin/dashboard')
     })
     .catch(err => console.log(err))
   }

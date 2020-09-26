@@ -4,6 +4,7 @@ import ProductosTabla from "../components/ProductosTabla";
 import Loading from "../components/Loading";
 import Grafico from "../components/Grafico";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 export default function DashboardView() {
   const [misProductos, SetMisProductos] = useState([]);
@@ -44,9 +45,9 @@ export default function DashboardView() {
       ) : (
         <div>
           <h1>Dashboard</h1>
-          <button className="btn btn-primary mb-3">
+          <Link className="btn btn-primary mb-3" to="/admin/crearproducto">
             Agregar Nuevo Producto
-          </button>
+          </Link>
           <ProductosTabla
             productos={misProductos}
             deleteProduct={deleteProduct}

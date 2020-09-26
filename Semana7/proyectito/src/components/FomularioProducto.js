@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { crearProducto } from "../services/productosService";
+import { subirImagen } from "../services/productosService";
+import {storage} from '../config/firebase';
+
+let imagenProducto;
 
 export default function FomularioProducto({createProduct, textoBoton}) {
   const [value, setValue] = useState({
@@ -7,6 +10,7 @@ export default function FomularioProducto({createProduct, textoBoton}) {
     producto_descripcion: "",
     producto_precio: 0,
     producto_stock: 0,
+    producto_imagen:""
   });
 
   const actualizarInput = (e) => {
@@ -17,9 +21,24 @@ export default function FomularioProducto({createProduct, textoBoton}) {
     })
   };
 
+  const manejarImagen = (e) => {
+    e.preventDefault();
+    let miImagen = e.target.files[0];
+    // console.log(miImagen);
+    imagenProducto = miImagen;
+  }
+
   const manejarSubmit = (e) => {
     e.preventDefault(); //corto el evento predeterminado del submit del formulario
-    createProduct(value); //mando a crear el Producto
+    const refStorage = storage.ref(`productos/${imagenProducto.name}`);
+    subirImagen(imagenProducto,refStorage)
+    .then(urlImagen => {
+      console.log(urlImagen)
+      // setValue({...value, producto_imagen:urlImagen})
+      //despues de que ya subi mi imagen
+      createProduct({...value, producto_imagen:urlImagen}); //mando a crear el Producto
+    })
+    
   }
 
   return (
@@ -69,6 +88,14 @@ export default function FomularioProducto({createProduct, textoBoton}) {
           value={value.producto_stock}
           onChange={(e) => {actualizarInput(e)}}
           required
+        />
+      </div>
+      <div className="form-group">
+        <label>Elegir Imagen</label>
+        <input 
+        type="file"
+        onChange={(e) => {manejarImagen(e)}}
+        className="form-control"
         />
       </div>
       <button type="submit" className="btn btn-primary btn-lg btn-block">

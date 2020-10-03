@@ -16,7 +16,9 @@ export class TareasComponent implements OnInit {
 
   ngOnInit(): void {
     this.suscripcionTareas = this._sTarea.getTareas().subscribe((data) => {
-      console.log(data);
+      // console.log(data);
+      this.misTareas = data;
+      console.log(this.misTareas)
     })
   }
 

@@ -1,12 +1,13 @@
 <div class="card m-2">
-  <img src="https://picsum.photos/200" alt="..."/>
+  <img [src]="tarea.tarea_imagen" alt="..."/>
   <div class="card-body">
     <h5 class="card-title">
-      Nombre
+      {{tarea.tarea_nombre}}
     </h5>
     <p class="card-text">
-      Tarea
+      Descripción: {{tarea.tarea_descripcion}}
     </p>
     <button class="btn btn-primary">Ver Tareita</button>
   </div>
+  <div class="card-footer">Tiempo:{{tarea.tarea_hora}}</div>
 </div>

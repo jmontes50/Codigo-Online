@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ReporteService } from '../../../services/reporte.service';
 import {Subscription} from 'rxjs';
 
@@ -7,10 +7,15 @@ import {Subscription} from 'rxjs';
   templateUrl: './reporte.component.html',
   styleUrls: ['./reporte.component.css']
 })
-export class ReporteComponent implements OnInit {
+export class ReporteComponent implements OnInit, AfterViewInit {
 
   suscripcionAReporte:Subscription;
   tareasCompletadas:Array<any> = [];
+
+  // grafico
+  public label = ['Tareas Completadas','Tareas por Completar'];
+  public data = [this.tareasCompletadas.length, 10];
+  public tipoGrafico = 'pie';
 
   constructor(private _sReporte:ReporteService) { }
 
@@ -18,7 +23,12 @@ export class ReporteComponent implements OnInit {
     this.suscripcionAReporte = this._sReporte.reporteActual.subscribe((tareas) => {
       this.tareasCompletadas = tareas;
       console.log(this.tareasCompletadas)
+      this.data = [this.tareasCompletadas.length, 10]
     })
+  }
+
+  ngAfterViewInit(){
+    this.data = [this.tareasCompletadas.length, 10]
   }
 
 }

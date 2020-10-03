@@ -1,4 +1,6 @@
+<button class="btn btn-primary" [routerLink]="['creartarea']" >Crear Tarea</button>
 <div class="row">
+  
   <div *ngFor="let tarea of misTareas" class="col-12 col-md-6 col-lg-4">
     <app-tarea [tarea]="tarea" (tareaClick)="completarTarea($event)">
     </app-tarea>

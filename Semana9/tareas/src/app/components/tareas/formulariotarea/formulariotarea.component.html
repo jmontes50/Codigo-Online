@@ -1,0 +1,22 @@
+<h1>Crear Nueva Tarea</h1>
+<div>
+  <div class="form-group">
+    <label>Nombre Tarea</label>
+    <input type="text" [(ngModel)]="nuevaTarea.tarea_nombre" class="form-control" placeholder="Ingrese el nombre">
+  </div>
+  <div class="form-group">
+    <label>Descripción de la Tarea</label>
+    <input type="text" [(ngModel)]="nuevaTarea.tarea_descripcion" class="form-control" placeholder="Ingrese la Descripción">
+  </div>
+  <div class="form-group">
+    <label>Imagen</label>
+    <input type="text" [(ngModel)]="nuevaTarea.tarea_imagen" class="form-control" placeholder="Ingrese la URL">
+  </div>
+  <div class="form-group">
+    <label>Tiempo Tarea</label>
+    <input type="number" [(ngModel)]="nuevaTarea.tarea_tiempo" class="form-control" placeholder="Ingrese el tiempo">
+  </div>
+  <button class="btn btn-primary btn-block btn-lg" (click)="crearTarea()">
+    Crear Tarea
+  </button>
+</div>

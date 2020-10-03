@@ -18,4 +18,8 @@ export class TareaService {
   getTareaById(id:string): Observable<any> {
     return this._sHttp.get(`${this.url}tareas/${id}`)
   }
+
+  createTarea(nuevaTarea:any):Observable<any> {
+    return this._sHttp.post(`${this.url}tareas`,nuevaTarea)
+  }
 }

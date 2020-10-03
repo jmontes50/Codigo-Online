@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tarea',
@@ -16,7 +17,14 @@ export class TareaComponent implements OnInit {
   }
 
   completar(){
-    this.tareaClick.emit(this.tarea)
+    this.tareaClick.emit(this.tarea);
+    Swal.fire({
+      icon:'success',
+      title:'Felicidades',
+      text:'Tarea Completada',
+      timer:2000,
+      showConfirmButton:false
+    })
   }
 
 }

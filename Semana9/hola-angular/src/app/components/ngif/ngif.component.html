@@ -1,0 +1,16 @@
+<h2><code>ngIf</code></h2>
+<div *ngIf="estaLogueado else noLogueado">
+  Bienvenido!
+</div>
+<hr/>
+<div *ngIf="estaLogueado && esNuevo">
+  Bienvenido!, explora la aplicación!
+</div>
+
+<div *ngIf="estaLogueado || !esNuevo">
+  Bienvenido!, de nuevo
+</div>
+
+<ng-template #noLogueado>
+  Amigo, Has login por favor
+</ng-template>

@@ -1,0 +1,20 @@
+<main class="container mt-4">
+  <h1>Ingredientes para el ceviche</h1>
+
+  <ul>
+    <li *ngFor="let item of ceviche; index as i">
+      {{item}} - {{i}}
+      <button class="btn btn-danger btn-sm" (click)="eliminarIngrediente(i)"> 
+        - 
+      </button>
+    </li>
+  </ul>
+
+  <label class="text-secondary">
+    Ingrediente a agregar: {{ingrediente}}
+  </label>
+  <input type="text" class="form-control" [(ngModel)]="ingrediente">
+  <button class="btn btn-primary" (click)="agregarIngrediente()">
+    Agregar Ingrediente
+  </button>
+</main>

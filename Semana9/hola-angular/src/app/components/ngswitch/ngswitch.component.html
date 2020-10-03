@@ -1,0 +1,13 @@
+<h2><code>ngSwitch</code></h2>
+
+Mes: {{mes}}
+
+<div [ngSwitch]="mes">
+  <p *ngSwitchCase="1">Enero</p>
+  <p *ngSwitchCase="2">Febrero</p>
+  <p *ngSwitchCase="3">Marzo</p>
+  <p *ngSwitchCase="4">Abril</p>
+  <p *ngSwitchCase="5">Mayo</p>
+  <p *ngSwitchCase="6">Junio</p>
+  <p *ngSwitchDefault>Nel</p>
+</div>

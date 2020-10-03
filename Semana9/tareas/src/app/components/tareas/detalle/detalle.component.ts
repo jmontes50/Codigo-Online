@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import  {ActivatedRoute, Params } from '@angular/router';
+import {TareaService} from '../../../services/tarea.service';
 
 @Component({
   selector: 'app-detalle',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalleComponent implements OnInit {
 
-  constructor() { }
+  miTarea:any;
+
+  constructor(private _route:ActivatedRoute, private _sTarea:TareaService) { }
 
   ngOnInit(): void {
+    this._route.params.subscribe((parametros:Params) => {
+      // console.log(parametros)
+      let id = parametros.id;
+      this._sTarea.getTareaById(id).subscribe((tareaRecibida) => {
+        this.miTarea = tareaRecibida;
+      })
+    })
   }
-
 }

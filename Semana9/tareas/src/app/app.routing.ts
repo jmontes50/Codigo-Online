@@ -7,7 +7,7 @@ import { DetalleComponent } from './components/tareas/detalle/detalle.component'
 const routes: Routes = [
   // {path: ruta_string, component: ComponenteImportado}
   { path: '', component: TareasComponent },
-  { path: 'detalle', component: DetalleComponent },
+  { path: 'detalle/:id', component: DetalleComponent },
 ];
 
 @NgModule({

@@ -5,7 +5,8 @@
       {{ tarea.tarea_nombre }}
     </h5>
     <p class="card-text">Descripción: {{ tarea.tarea_descripcion }}</p>
-    <button class="btn btn-primary btn-block">Ver Tareita</button>
+    <!-- routerLink="[ruta,parametro]" -->
+    <button class="btn btn-primary btn-block" [routerLink]="['detalle',tarea.tarea_id]">Ver Tareita</button>
     <button class="btn btn-success btn-block" (click)="completar()">
       Tarea Completada
     </button>

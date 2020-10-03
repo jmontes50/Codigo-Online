@@ -14,4 +14,8 @@ export class TareaService {
   getTareas(): Observable<any> {
       return this._sHttp.get(`${this.url}tareas`);
   }
+
+  getTareaById(id:string): Observable<any> {
+    return this._sHttp.get(`${this.url}tareas/${id}`)
+  }
 }

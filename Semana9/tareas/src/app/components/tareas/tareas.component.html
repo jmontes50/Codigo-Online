@@ -3,4 +3,7 @@
     <app-tarea [tarea]="tarea" (tareaClick)="completarTarea($event)">
     </app-tarea>
   </div>
+  <div *ngIf="errorTareas">
+    <p class="text-danger">Error de Conexión</p>
+  </div>
 </div>

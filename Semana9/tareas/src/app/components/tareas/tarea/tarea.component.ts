@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tarea',
@@ -8,10 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TareaComponent implements OnInit {
 
   @Input() tarea:any;
+  @Output() tareaClick: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  completar(){
+    this.tareaClick.emit(this.tarea)
   }
 
 }

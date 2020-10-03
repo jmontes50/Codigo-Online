@@ -22,4 +22,8 @@ export class TareasComponent implements OnInit {
     })
   }
 
+  completarTarea(tarea){
+    alert(JSON.stringify(tarea));
+  }
+
 }

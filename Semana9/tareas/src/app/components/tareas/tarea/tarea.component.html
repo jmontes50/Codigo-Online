@@ -1,13 +1,14 @@
 <div class="card m-2">
-  <img [src]="tarea.tarea_imagen" alt="..."/>
+  <img [src]="tarea.tarea_imagen" alt="..." />
   <div class="card-body">
     <h5 class="card-title">
-      {{tarea.tarea_nombre}}
+      {{ tarea.tarea_nombre }}
     </h5>
-    <p class="card-text">
-      Descripción: {{tarea.tarea_descripcion}}
-    </p>
-    <button class="btn btn-primary">Ver Tareita</button>
+    <p class="card-text">Descripción: {{ tarea.tarea_descripcion }}</p>
+    <button class="btn btn-primary btn-block">Ver Tareita</button>
+    <button class="btn btn-success btn-block" (click)="completar()">
+      Tarea Completada
+    </button>
   </div>
-  <div class="card-footer">Tiempo:{{tarea.tarea_hora}}</div>
+  <div class="card-footer">Tiempo:{{ tarea.tarea_hora }}</div>
 </div>

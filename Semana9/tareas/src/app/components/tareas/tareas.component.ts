@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TareaService } from '../../services/tarea.service';
 import { Subscription } from 'rxjs';
 import { ReporteService } from '../../services/reporte.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-tareas',
   templateUrl: './tareas.component.html',
@@ -19,7 +19,7 @@ export class TareasComponent implements OnInit {
     private _sReporte: ReporteService
   ) {}
 
-  ngOnInit(): void {
+  obtenerTareas(){
     this.suscripcionTareas = this._sTarea.getTareas().subscribe(
       (data) => {
         // console.log(data);
@@ -32,6 +32,10 @@ export class TareasComponent implements OnInit {
         this.errorTareas = true;
       }
     );
+  }
+
+  ngOnInit(): void {
+   this.obtenerTareas()
   }
 
   completarTarea(tarea) {
@@ -57,5 +61,36 @@ export class TareasComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  borrarTarea(tarea){
+    Swal.fire({
+      title:'Esta seguro????',
+      text:'No eres un impostor????',
+      icon:'warning',
+      showCancelButton:true,
+      confirmButtonText:'Si, Borrar',
+      cancelButtonText:'No, mantener'
+    }).then((result)=>{
+      if(result.value === true){
+        // el codigo para eliminar la tarea
+        this._sTarea.deleteTarea(tarea.tarea_id).subscribe(
+          (tareaEliminada) => {
+            this.obtenerTareas()
+            // alerta de exito al eliminar
+            Swal.fire({
+              title:'Tarea eliminada',
+              icon:'success'
+            })
+          },
+          (error => {
+            console.log(error)
+          })
+        )
+      }else{
+        //sweet alert que diga que cancelo
+      }
+    })
+    
   }
 }

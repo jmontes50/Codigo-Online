@@ -10,6 +10,7 @@ export class TareaComponent implements OnInit {
 
   @Input() tarea:any;
   @Output() tareaClick: EventEmitter<any> = new EventEmitter();
+  @Output() borrarTarea: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
@@ -25,6 +26,10 @@ export class TareaComponent implements OnInit {
       timer:2000,
       showConfirmButton:false
     })
+  }
+
+  borrar(){
+    this.borrarTarea.emit(this.tarea)
   }
 
 }

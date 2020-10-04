@@ -22,4 +22,8 @@ export class TareaService {
   createTarea(nuevaTarea:any):Observable<any> {
     return this._sHttp.post(`${this.url}tareas`,nuevaTarea)
   }
+
+  deleteTarea(id:string):Observable<any> {
+    return this._sHttp.delete(`${this.url}tareas/${id}`)
+  }
 }

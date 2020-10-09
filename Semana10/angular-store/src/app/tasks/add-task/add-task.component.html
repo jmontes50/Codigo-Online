@@ -1,0 +1,5 @@
+<div>
+  <input type="text" placeholder="nombre tarea" #name/>
+  <input type="text" placeholder="estado tarea" #state/>
+  <button (click)="addTask(name.value, state.value)">Crear Tarea</button>
+</div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { fromEventPattern } from 'rxjs';
 import { AppState } from '../../app.state';
 import * as TaskActions from '../../store/tasks.actions';
 
@@ -19,5 +18,4 @@ export class AddTaskComponent implements OnInit {
   addTask(name, state) {
     this.store.dispatch(new TaskActions.AddTask({name: name, state:state}))
   }
-
 }

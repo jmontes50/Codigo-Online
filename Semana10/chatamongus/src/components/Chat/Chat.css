@@ -1,0 +1,14 @@
+.chat{
+  background-color:black;
+  height:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerchat{
+  width:75%;
+  height:75%;
+  display:grid;
+  grid-template-rows: 9fr 1fr;
+}

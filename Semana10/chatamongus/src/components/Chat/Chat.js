@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import queryString from "query-string";
 import io from "socket.io-client";
+import Messages from "../Messages/Messages";
+import Input from "../Input/Input";
+import './Chat.css';
 
 // const ENDPOINT = 'https://chatamongus.herokuapp.com/';
 const ENDPOINT = "localhost:5000";
@@ -11,6 +14,7 @@ export default function Chat({ location }) {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [message, setMessage] = useState("");
+  const [messages, setMessages] = useState([])
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -27,6 +31,12 @@ export default function Chat({ location }) {
     });
   }, [ENDPOINT, location.search]);
 
+  useEffect(()=>{
+    socket.on('message', message => {
+      setMessages(messages => [...messages, message]);
+    })
+  }, [])
+
   const sendMessage = (mensaje) => {
     if (mensaje.trim() !== "") {
       socket.emit("sendMessage", mensaje, () => {});
@@ -34,21 +44,11 @@ export default function Chat({ location }) {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        value={message}
-        onChange={(e) => {
-          setMessage(e.target.value);
-        }}
-      />
-      <button
-        onClick={() => {
-          sendMessage(message);
-        }}
-      >
-        Enviar
-      </button>
+    <div className="chat">
+      <div className="containerchat">
+        <Messages messages={messages} name={name}/>
+        <Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>
+      </div>
     </div>
   );
 }

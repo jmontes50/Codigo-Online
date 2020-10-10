@@ -1,0 +1,9 @@
+.Input{
+  display:grid;
+  grid-template-columns: 10fr 1fr;
+}
+
+.Input input{
+  padding:10px;
+  font-family: 'amongus2';
+}

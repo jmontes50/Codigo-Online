@@ -1,0 +1,34 @@
+.login{
+  background-color: black;
+  color:white;
+  height:100%;
+  display:flex;
+  flex-direction: column;
+  max-width: 600px;
+  align-items: center;
+  justify-content: center;
+}
+
+h2{
+  font-family: 'amongus';
+}
+
+.login > div > input, .btn-amongus{
+  background-color: black;
+  color:white;
+  border:2px solid double;
+  border-radius:5px;
+}
+
+.login > div {
+  margin:30px;
+}
+
+.login > div > * {
+  padding:10px;
+}
+
+.btn-amongus{
+  padding:15px;
+  font-family: 'amongus2';
+}

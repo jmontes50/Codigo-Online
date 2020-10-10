@@ -1,0 +1,19 @@
+@font-face {
+  font-family:"amongus";
+  src:url('./assets/fonts/amongus1.ttf');
+}
+
+@font-face {
+  font-family: "amongus2";
+  src:url('./assets/fonts/amongus2.ttf');
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: 0;
+}
+
+html, body, #root{
+  height:100%;
+}

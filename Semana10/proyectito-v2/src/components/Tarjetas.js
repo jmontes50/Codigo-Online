@@ -1,20 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import Tarjeta from './Tarjeta';
-import {obtenerProductos} from '../services/productosService';
 
-export default function Tarjetas() {
-
-  const [productos, setProductos] = useState([])
-
-  const getProducts = async () => {
-    let data = await obtenerProductos()
-    // console.log(data)
-    setProductos(data)
-  }
-
-  useEffect(()=>{
-    getProducts();
-  },[])
+export default function Tarjetas({productos}) {
 
   return (
     <div className="row">

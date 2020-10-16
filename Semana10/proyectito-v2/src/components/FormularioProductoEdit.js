@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { subirImagen } from "../services/productosService";
 import { storage } from "../config/firebase";
 import { useForm } from "react-hook-form";
+import {v4 as uuidv4} from "uuid";
 
 let imagenProducto;
 
@@ -12,6 +13,7 @@ export default function FomularioProductoEdit({
 }) {
   let { register, handleSubmit, setValue, errors } = useForm();
 
+  //Con este useEffect obtengo de los props producto y actualizo en los input cada valor correspondiente
   useEffect(() => {
     let {
       producto_nombre,
@@ -25,17 +27,29 @@ export default function FomularioProductoEdit({
     setValue("producto_stock", producto_stock);
   }, [producto]);
 
+  const cambiarNombre = (nombre) => {
+    //nombre aleatorio
+    let nombreAleatorio = uuidv4();
+    //separar
+    let separarNombre = nombre.split(".")
+    //concatenamos
+    let nuevoNombre = `${nombreAleatorio}.${separarNombre[1]}`
+    return nuevoNombre;
+  }
+
   const manejarImagen = (e) => {
     e.preventDefault();
     let miImagen = e.target.files[0];
     // console.log(miImagen);
     imagenProducto = miImagen;
+    // console.log("name",imagenProducto.name)
   };
 
   const manejarSubmit = (data) => {
     //si es que he tocado el componente input y he agregado una imagen, imagenProducto sera diferente de undefined
     if (imagenProducto !== undefined) {
-      const refStorage = storage.ref(`productos/${imagenProducto.name}`);
+      let nuevoNombre = cambiarNombre(imagenProducto.name);
+      const refStorage = storage.ref(`productos/${nuevoNombre}`);
       subirImagen(imagenProducto, refStorage).then((urlImagen) => {
         console.log(urlImagen);
         // setValue({...value, producto_imagen:urlImagen})

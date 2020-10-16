@@ -32,6 +32,18 @@ const crearProducto = async (objProducto) => {
   }
 };
 
+const editarProducto = async (objProducto, prod_id) => {
+  try {
+    let headers = {
+      "Content-Type": "application/json",
+    };
+    let { data } = await axios.post(`${URL}/${prod_id}`, objProducto, { headers });
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
+
 const borrarProducto = async (prod_id) => {
   try {
     let { data } = await axios.delete(`${URL}/${prod_id}`);
@@ -68,6 +80,7 @@ export {
   obtenerProductos,
   obtenerProductoPorId,
   crearProducto,
+  editarProducto,
   borrarProducto,
   subirImagen
 };

@@ -7,6 +7,7 @@ import DetailView from './views/DetailView';
 import CarritoView from './views/CarritoView';
 import DashboardView from './views/DashboardView';
 import CrearProductoView from './views/CrearProductoView';
+import EditarProductoView from './views/EditarProductoView';
 import LoginView from './views/LoginView';
 import RegisterView from './views/RegisterView';
 
@@ -21,6 +22,7 @@ export default function routes() {
       <Route exact path="/register" component={RegisterView} />
       
       <Route exact path="/admin/crearproducto" component={CrearProductoView} />
+      <Route exact path="/admin/editarproducto/:id" component={EditarProductoView} />
       <ProtectedRoute exact path="/admin/dashboard" component={DashboardView} />
     </Fragment>
   )

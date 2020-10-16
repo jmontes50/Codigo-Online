@@ -77,6 +77,7 @@ export default function HomeView() {
           >
             Filtrar
           </button>
+          <button className="btn btn-secondary btn-sm btn-block" onClick={()=>{getProducts()}}>Restaurar</button>
         </div>
         <div className="col-12 col-md-9">
           <h3>Lista de Productos</h3>

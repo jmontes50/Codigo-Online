@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import {Link} from 'react-router-dom';
 
 export default function ProductosTabla({ productos, deleteProduct }) {
   return (
@@ -33,9 +34,9 @@ export default function ProductosTabla({ productos, deleteProduct }) {
                 <td>{producto_stock}</td>
                 <td>{producto_precio}</td>
                 <td>
-                  <button className="btn btn-outline-info btn-sm mr-2">
+                  <Link to={`/admin/editarproducto/${producto_id}`} className="btn btn-outline-info btn-sm mr-2">
                     <i className="fas fa-pen-alt"></i>
-                  </button>
+                  </Link>
                   <button className="btn btn-outline-danger btn-sm" onClick={()=>{deleteProduct(producto_id)}}>
                   <i className="fas fa-trash"></i>
                   </button>

@@ -13,10 +13,19 @@ export default function EditarProductoView(props) {
     setProducto(productoObtenido)
   },[])
 
+  const editProduct = async (objProducto, id) => {
+    let peticionEditar = await editarProducto(objProducto, id)
+    Swal.fire({
+      icon:"success",
+      title:"Exito!",
+      text:"Producto Editado Exitosamente"
+    })
+  }
+
   return (
     <div>
       <h1>Crear Producto</h1>
-      <FormularioProductoEdit producto={producto} editarProducto={editarProducto} textoBoton="Crear Producto"/>
+      <FormularioProductoEdit producto={producto} editProduct={editProduct} textoBoton="Editar Producto"/>
     </div>
   )
 } 

@@ -37,7 +37,7 @@ const editarProducto = async (objProducto, prod_id) => {
     let headers = {
       "Content-Type": "application/json",
     };
-    let { data } = await axios.post(`${URL}/${prod_id}`, objProducto, { headers });
+    let { data } = await axios.put(`${URL}/${prod_id}`, objProducto, { headers });
     return data;
   } catch (error) {
     return error;
